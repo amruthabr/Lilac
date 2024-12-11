@@ -23,7 +23,7 @@ class UserController extends Controller
                 ->join('departments', 'users.fk_department', '=', 'departments.id')
                 ->select('users.*', 'designations.name as designation_name', 'departments.name as department_name')
                 ->get();
-            return view('search', compact('users')); // Returns the search view without any results
+            return view('search', compact('users')); 
         }
         $users = DB::table('users')
         ->join('designations', 'users.fk_designation', '=', 'designations.id')
